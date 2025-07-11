@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Siham Bouzagrar - Geomatics Engineering student specializing in GIS, digital cartography, and web development">
+  <title>About – Siham Bouzagrar</title>
+
+  <!-- Preload resources -->
+  <link rel="preload" href="Styles.css" as="style">
+  <link rel="preload" href="css/about.css" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="Styles.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Favicon (add your own) -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="app-container">
+    <div class="portfolio-container">
+   
+
+      <!-- Main Content Area -->
+      <main class="main-content" id="main-content">
+        <article class="about-section">
+          <div class="about-card">
+
+            <!-- About Header Section -->
+            <header class="about-header">
+              <h1 class="about-title">Welcome! <br> This is a brief introduction</h1>
+              <div class="geomatic-icon" aria-hidden="true">
+                <i class="fas fa-globe-africa"></i>
+              </div>
+              <p class="about-subtitle">
+                Geomatics engineering student at EHTP, I am passionate about Geographic Information Systems (GIS), digital cartography, and web development.
+              </p>
+            </header>
+
+            <!-- Detailed Content Sections -->
+            <div class="about-content">
+              <section class="about-subsection">
+                <h2 class="about-section-title">
+                  <i class="fas fa-user-graduate" aria-hidden="true"></i>
+                  <span>Education</span>
+                </h2>
+                <p class="about-text">
+                  My academic background includes a solid scientific education (Baccalaureate in Physical Sciences, CPGE PSI) followed by a specialization in Geomatics at EHTP.
+                </p>
+              </section>
+
+              <section class="about-subsection">
+                <h2 class="about-section-title">
+                  <i class="fas fa-bullseye" aria-hidden="true"></i>
+                  <span>Objectives</span>
+                </h2>
+                <p class="about-text">
+                  With a strong foundation in GIS and web development, I strive to build innovative tools for spatial analysis and visualization.<br>
+                  I'm also deeply passionate about data science and its integration into geospatial solutions.
+                </p>
+              </section>
+
+              <!-- Action Buttons -->
+              <nav class="about-buttons" aria-label="About page actions">
+                <a href="index.html" class="btn">
+                  <span>Back to Home</span>
+                </a>
+                <a href="projects.html" class="btn btn-primary">
+                  <span>View my projects</span>
+                  <i class="fas fa-arrow-right btn-icon" aria-hidden="true"></i>
+                </a>
+                <a href="Contacts.html" class="btn btn-secondary">
+                  <span>Download CV</span>
+                </a>
+              </nav>
+            </div>
+
+          </div>
+        </article>
+      </main>
+    </div>
+  </div>
+
+  <!-- JavaScript with graceful degradation -->
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      // Animation observer
+      if ('IntersectionObserver' in window) {
+        const elements = document.querySelectorAll('[data-animate]');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        elements.forEach(el => observer.observe(el));
+      }
+      
+      // Focus management for accessibility
+      document.getElementById('main-content').setAttribute('tabindex', '-1');
+    });
+  </script>
+</body>
+</html>
+
+
